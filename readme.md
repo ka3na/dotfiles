@@ -1,6 +1,8 @@
 # dotfiles
 
-## Installation && Sync
+## Installation & Sync
+
+`curl https://raw.githubusercontent.com/ka3na/dotfiles/master/sync.sh | sh`
 
 ## References
 
