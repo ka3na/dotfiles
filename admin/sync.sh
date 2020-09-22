@@ -51,18 +51,18 @@ for file in $USER_FILES; do
   echo $styleAction" Checking $dotfile... "$styleEnd
 
   if [ -L $dotfile ] ; then
-    echo $styleInfo"File '$dotfile' exists, and is a symlink, deleting the symlink since we will be replacing it"$styleEnd
+    echo $styleInfo"File '$dotfile' exists, is a symlink, deleting the symlink, we will be creating a new one"$styleEnd
     rm $dotfile
   elif [ -e $dotfile ] ; then
-    echo $styleInfo"File '$dotfile' exists but is not a symlink, backing up to $DIR_BACKUP"$styleEnd
+    echo $styleInfo"File '$dotfile' exists, is a file or folder, backing up to $DIR_BACKUP"$styleEnd
     mkdir -p "$DIR_BACKUP"
     mv $dotfile $DIR_BACKUP/
   else
-    echo $styleInfo"File '$dotfile' is missing, it's OK since we will be creating a new symlink here"$styleEnd
+    echo $styleInfo"File '$dotfile' does not exist, which is OK, we will be symlinking it"$styleEnd
   fi
 
   # create a new symlink pointing to our dotfile
-  echo $styleInfo"Creating symlink for '$dotfile' pointing to '$DIR_ROOT/user/$file'"$styleEnd
+  echo $styleInfo"Creating symlink for '$dotfile' pointing to ~/'$DIR_ROOT/user/$file'"$styleEnd
   ln -s $DIR_ROOT/user/$file $dotfile
 
   echo $styleConfirm"...done"$styleEnd
