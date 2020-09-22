@@ -13,11 +13,11 @@ DIR_BACKUP="dotfiles-backup/$(date +'%Y.%m.%d-%H.%M.%S')"
 
 USER_FILES="bashrc bash_profile"
 
-# Make sure we are in the correct working directory
-cd ~/$DIR_ROOT
+# Make sure we are in the user home directory
+cd ~
 
 # Sourcing required files
-fileTextFormat=helpers/textFormat.sh
+fileTextFormat=$DIR_ROOT/helpers/textFormat.sh
 if [ -f "$fileTextFormat" ]; then
   source $fileTextFormat
 else 
@@ -36,19 +36,16 @@ styleError=$tRed
 styleEnd=$tReset
 
 # Update to latest from github
+echo $styleAction" Pulling in latest updates... "$styleEnd
 if [ -d "$DIR_ROOT" ]; then
-  echo $styleAction" Pulling latest into ~/$DIR_ROOT folder... "$styleEnd
   cd "$DIR_ROOT"
   git pull
   echo $styleConfirm"...done"$styleEnd
-# else
-  # echo $styleAction" Cloning into '$DIR_ROOT' folder ... "$styleEnd
-  # git clone git@github.com:ka3na/dotfiles.git "$DIR_ROOT"
-  # echo $styleConfirm"...done"$styleEnd
+else
+  echo $styleError"Error: $DIR_ROOT does not exist in home directory, please run the install script"$styleEnd
 fi
 
 # Loop over user files and symlink them to our dotfiles, backing up any content
-cd ~
 for file in $USER_FILES; do
   dotfile=.$file
   echo $styleAction" Checking $dotfile... "$styleEnd
