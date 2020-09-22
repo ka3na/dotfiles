@@ -23,7 +23,7 @@ if [ -f "$fileTextFormat" ]; then
 else 
   tRed='\033[31m'
   tReset='\033[0m'
-  echo $tRed"Error: file $fileTextFormat is required but does not exist"$tReset
+  echo $tRed"Error: file '~/$fileTextFormat' is required but does not exist, please run the install script"$tReset
   exit
 fi
 
@@ -66,5 +66,4 @@ for file in $USER_FILES; do
   ln -s $DIR_ROOT/user/$file $dotfile
 
   echo $styleConfirm"...done"$styleEnd
-
 done
