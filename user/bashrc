@@ -1,3 +1,9 @@
 #!/bin/bash
 
+# File for local unversioned requirements
+fileBashrcLocal=~/.bashrc_local
+if [ -e "$fileBashrcLocal" ]; then
+  source $fileBashrcLocal
+fi
+
 source ~/dotfiles/runcom/.nvmrc

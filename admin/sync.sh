@@ -45,7 +45,7 @@ else
   echo $styleError"Error: $DIR_ROOT does not exist in home directory, please run the install script"$styleEnd
 fi
 
-# Loop over user files and symlink them to our dotfiles, backing up any content
+# Loop over user files to symlink them to our dotfiles, backing up any content
 for file in $USER_FILES; do
   dotfile=.$file
   echo $styleAction" Checking $dotfile... "$styleEnd
