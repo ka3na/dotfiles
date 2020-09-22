@@ -63,7 +63,7 @@ for file in $USER_FILES; do
   fi
 
   # create a new symlink pointing to our dotfile
-  echo $styleInfo"Creating symlink for '$dotfile' pointing to ~/'$DIR_ROOT/user/$file'"$styleEnd
+  echo $styleInfo"Creating symlink for '$dotfile' pointing to '~/$DIR_ROOT/user/$file'"$styleEnd
   ln -s $DIR_ROOT/user/$file $dotfile
 
   echo $styleConfirm"...done"$styleEnd
