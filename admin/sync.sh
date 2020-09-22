@@ -46,6 +46,7 @@ else
 fi
 
 # Loop over user files to symlink them to our dotfiles, backing up any content
+cd ~
 for file in $USER_FILES; do
   dotfile=.$file
   echo $styleAction" Checking $dotfile... "$styleEnd
