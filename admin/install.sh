@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ------------------------------------------------------------------------------
-# Install the dotfiles repository.
+# Installs the dotfiles repository.
 #
 # This acts as a reset as it will back up and replace any existing 'dotfiles' 
 # folder that already exists in the user's home directory.
@@ -47,16 +47,16 @@ fi
 echo $styleConfirm"...done"$styleEnd
 
 # Clone the 'dotfiles' repo into the user home directory
-echo $styleAction" Cloning the 'ka3na/dotfiles' repository into '$DIR_ROOT' folder "$styleEnd
+echo $styleAction" Cloning 'ka3na/dotfiles' repo into '$DIR_ROOT' folder "$styleEnd
 git clone git@github.com:ka3na/dotfiles.git "$DIR_ROOT"
 echo $styleConfirm"...done"$styleEnd
 
-# Call the sync command
-echo $styleAction" Calling the sync command "$styleEnd
+# Call the sync (setup) command
+echo $styleAction" Calling the sync command to set up our dotfiles "$styleEnd
 fileSync=dotfiles/admin/sync.sh
 if [ -f "$fileSync" ]; then
   echo $styleConfirm"...sync file found"$styleEnd
   source $fileSync
 else 
-  echo $styleError"Unable to complete the action, $fileSync does not exist"$styleEnd
+  echo $styleError"Error: unable to complete the action, $fileSync does not exist"$styleEnd
 fi

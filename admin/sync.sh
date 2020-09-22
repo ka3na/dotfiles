@@ -1,12 +1,5 @@
 #!/bin/bash
 
-fileTextFormat=helpers/textFormat.sh
-if [ -f "$fileTextFormat" ]; then
-  source $fileTextFormat
-else 
-  echo "$fileTextFormat does not exist."
-fi
-
 # ------------------------------------------------------------------------------
 # Sync dotfiles from local or remote.
 #
@@ -20,6 +13,21 @@ DIR_BACKUP="dotfiles-backup/$(date +'%Y.%m.%d-%H.%M.%S')"
 
 USER_FILES="bashrc bash_profile"
 
+# Make sure we are in the correct working directory
+cd ~/$DIR_ROOT
+
+# Sourcing required files
+fileTextFormat=helpers/textFormat.sh
+if [ -f "$fileTextFormat" ]; then
+  source $fileTextFormat
+else 
+  tRed='\033[31m'
+  tReset='\033[0m'
+  echo $tRed"Error: file $fileTextFormat is required but does not exist"$tReset
+  exit
+fi
+
+# Colours & styles
 styleAction=$tBgGreen$tWhite
 styleConfirm=$tGreen
 styleInfo=$tWhite
@@ -28,13 +36,12 @@ styleError=$tRed
 styleEnd=$tReset
 
 # Update to latest from github
-cd ~
 if [ -d "$DIR_ROOT" ]; then
   echo $styleAction" Pulling latest into ~/$DIR_ROOT folder... "$styleEnd
   cd "$DIR_ROOT"
   git pull
   echo $styleConfirm"...done"$styleEnd
-else
+# else
   # echo $styleAction" Cloning into '$DIR_ROOT' folder ... "$styleEnd
   # git clone git@github.com:ka3na/dotfiles.git "$DIR_ROOT"
   # echo $styleConfirm"...done"$styleEnd
@@ -47,18 +54,18 @@ for file in $USER_FILES; do
   echo $styleAction" Checking $dotfile... "$styleEnd
 
   if [ -L $dotfile ] ; then
-    echo $styleInfo"-> File '$dotfile' exists, and is a symlink, deleting the symlink since we will be replacing it"$styleEnd
+    echo $styleInfo"File '$dotfile' exists, and is a symlink, deleting the symlink since we will be replacing it"$styleEnd
     rm $dotfile
   elif [ -e $dotfile ] ; then
-    echo $styleInfo"-> File '$dotfile' exists but is not a symlink, backing up to $DIR_BACKUP"$styleEnd
+    echo $styleInfo"File '$dotfile' exists but is not a symlink, backing up to $DIR_BACKUP"$styleEnd
     mkdir -p "$DIR_BACKUP"
     mv $dotfile $DIR_BACKUP/
   else
-    echo $styleInfo"-> File '$dotfile' is missing, it's OK since we will be creating a new symlink here"$styleEnd
+    echo $styleInfo"File '$dotfile' is missing, it's OK since we will be creating a new symlink here"$styleEnd
   fi
 
   # create a new symlink pointing to our dotfile
-  echo $styleInfo"-> Creating symlink for '$dotfile' pointing to '$DIR_ROOT/user/$file'"$styleEnd
+  echo $styleInfo"Creating symlink for '$dotfile' pointing to '$DIR_ROOT/user/$file'"$styleEnd
   ln -s $DIR_ROOT/user/$file $dotfile
 
   echo $styleConfirm"...done"$styleEnd
