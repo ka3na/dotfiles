@@ -6,4 +6,5 @@ if [ -e "$fileBashrcLocal" ]; then
   source $fileBashrcLocal
 fi
 
+# Run commands
 source ~/dotfiles/runcom/.nvmrc
