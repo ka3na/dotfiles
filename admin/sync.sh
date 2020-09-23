@@ -8,7 +8,7 @@
 # ------------------------------------------------------------------------------
 
 # Defaults & parameters
-DIR_ROOT="dotfiles"
+DIR_ROOT=".dotfiles"
 DIR_BACKUP="dotfiles-backup/$(date +'%Y.%m.%d-%H.%M.%S')"
 
 USER_FILES="bashrc bash_profile"

@@ -7,7 +7,7 @@ if [ -e "$fileBashrcLocal" ]; then
 fi
 
 # Bash config
-source ~/dotfiles/shell-bash/prompt
+source ~/.dotfiles/shell-bash/prompt
 
 # Run commands
-source ~/dotfiles/runcom/.nvmrc
+source ~/.dotfiles/runcom/.nvmrc

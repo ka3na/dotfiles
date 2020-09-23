@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 # Installs the dotfiles repository.
 #
-# This acts as a reset as it will back up and replace any existing 'dotfiles' 
+# This acts as a reset as it will back up and replace any existing '.dotfiles' 
 # folder that already exists in the user's home directory.
 #
 # USAGE:
@@ -11,7 +11,7 @@
 # ------------------------------------------------------------------------------
 
 # Defaults & parameters
-DIR_ROOT="dotfiles"
+DIR_ROOT=".dotfiles"
 DIR_BACKUP="dotfiles-backup/$(date +'%Y.%m.%d-%H.%M.%S')"
 
 # Colours & styles
@@ -53,7 +53,7 @@ echo $styleConfirm"...done"$styleEnd
 
 # Call the sync (setup) command
 echo $styleAction" Calling the 'sync' script to set up our dotfiles "$styleEnd
-fileSync=dotfiles/admin/sync.sh
+fileSync=$DIR_ROOT/admin/sync.sh
 if [ -f "$fileSync" ]; then
   echo $styleConfirm"...script file found"$styleEnd
   source $fileSync
