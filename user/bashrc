@@ -6,5 +6,8 @@ if [ -e "$fileBashrcLocal" ]; then
   source $fileBashrcLocal
 fi
 
+# Bash config
+source ~/dotfiles/shell-bash/prompt
+
 # Run commands
 source ~/dotfiles/runcom/.nvmrc
