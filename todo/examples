@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# What does this do?
+cd "${0%/*}"
+
+# What does this do?
+set -e
+set -o pipefail
+
+# Another method for date
+NOW=`date "+%Y%m%d%H%M%S"`

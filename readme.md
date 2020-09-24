@@ -14,3 +14,5 @@ Inspired by these great examples:
 - https://github.com/cowboy/dotfiles
 - https://github.com/holman/dotfiles
 - https://github.com/mathiasbynens/dotfiles
+- https://github.com/jogendra/dotfiles
+- https://github.com/nikiforovall/dotfiles
