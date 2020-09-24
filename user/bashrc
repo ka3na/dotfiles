@@ -8,6 +8,7 @@ fi
 
 # Bash config
 source ~/.dotfiles/shell-bash/prompt
+source ~/.dotfiles/shell-bash/aliases
 
 # Run commands
 source ~/.dotfiles/runcom/nvmrc

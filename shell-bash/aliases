@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Navigation
+alias ..='cd ..'
+
+alias l='ls -lhaFG'
+alias ll='ls -lhaFrtG'
+
+# Git
+alias g='git'
+alias gl='git log'
+alias glp='git log --pretty=oneline'

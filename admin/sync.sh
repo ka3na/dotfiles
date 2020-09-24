@@ -17,7 +17,7 @@ USER_FILES="bashrc bash_profile"
 cd ~
 
 # Sourcing required files
-fileTextFormat=$DIR_ROOT/helpers/textFormat.sh
+fileTextFormat=$DIR_ROOT/helpers/textFormat
 if [ -f "$fileTextFormat" ]; then
   source $fileTextFormat
 else 
