@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # File for local unversioned requirements
 fileBashrcLocal=~/.bashrc_local
