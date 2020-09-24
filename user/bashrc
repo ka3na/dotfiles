@@ -10,4 +10,4 @@ fi
 source ~/.dotfiles/shell-bash/prompt
 
 # Run commands
-source ~/.dotfiles/runcom/.nvmrc
+source ~/.dotfiles/runcom/nvmrc
