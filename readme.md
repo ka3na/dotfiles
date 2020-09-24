@@ -8,6 +8,10 @@ Install dotfiles in home directory
 Update to latest and sync dotfiles
 `curl https://raw.githubusercontent.com/ka3na/dotfiles/master/admin/sync.sh | sh`
 
+## To Do
+
+- Add history search arrow up and down based on types prefix
+
 ## References
 
 Inspired by these great examples:
