@@ -1,1 +1,12 @@
 #!/usr/bin/env bash
+
+# Exit on non MacOS
+if test ! "$(uname)" = "Darwin"; then
+  exit 0
+fi
+
+# CD into current script folder
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
+# Source required files
+source settings

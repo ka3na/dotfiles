@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Example of settings: 
+# https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+# https://github.com/holman/dotfiles/blob/master/macos/set-defaults.sh
