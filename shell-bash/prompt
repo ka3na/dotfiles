@@ -1,2 +1,27 @@
 #!/usr/bin/env bash
 
+# https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/
+
+# default on MacOS: echo $PS1 = \h:\W \u\$
+
+# PS1="\d \h $ "
+
+# export PS1="\e[0;31m[\u@\h \W]\$ \e[m"
+
+# export PS1="\[\e[32m\][\[\e[m\]\[\e[31m\]\u\[\e[m\]\[\e[33m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\[\e[32m\]]\[\e[m\]\[\e[32;47m\]\\$\[\e[m\] "
+
+#
+#\u - user name
+#\h - short hostname
+#\W - current working dir
+#\? - exit status of the command
+# export PS1="{\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\W_\$?}$ "
+
+# tput
+# tput bold – Bold effect
+# tput rev – Display inverse colors
+# tput sgr0 – Reset everything
+# tput setaf {CODE}– Set foreground color, see color {CODE} table below for more information.
+# tput setab {CODE}– Set background color, see color {CODE} table below for more information.
+# export PS1="\[$(tput setaf 1)\]\u@\h:\w $ \[$(tput sgr0)\]"
+

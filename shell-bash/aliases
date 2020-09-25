@@ -3,8 +3,8 @@
 # Navigation
 alias ..='cd ..'
 
-alias l='ls -lhaFG'
-alias ll='ls -lhaFrtG'
+alias ls='ls -lhFG'
+alias lsa='ls -alhFG'
 
 # Git
 alias g='git'
