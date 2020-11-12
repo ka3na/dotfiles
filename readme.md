@@ -24,4 +24,6 @@ Inspired by these great examples:
 - https://github.com/holman/dotfiles
 - https://github.com/jogendra/dotfiles
 - https://github.com/mathiasbynens/dotfiles
+- https://github.com/necolas/dotfiles
 - https://github.com/nikiforovall/dotfiles
+- https://github.com/paulirish/dotfiles
