@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Suppress Catalina default zsh info
+export BASH_SILENCE_DEPRECATION_WARNING=1
