@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 
 # Navigation
-alias ..='cd ..'
+alias ..='cd .. && ls'
+alias ...='cd ../..'
 
 alias ls='ls -lhFG'
 alias lsa='ls -alhFG'
 
-# Git
-alias g='git'
-alias gl='git log'
-alias glp='git log --pretty=oneline'
+alias aliases='printf "\033[?7l" && alias && printf "\033[?7h"'
+
+# Git - https://git-scm.com/docs/git-log#_pretty_formats
+alias gl='git log --format=format:"%C(auto)%H%Creset - %cn - %Cgreen%cd%Creset - %Cgreen%cr%Creset - %s"'
+alias glt='git log --format=format:"%at - %H - %cn - %cd - %cr% - %s"'
+alias git-stalelocal='git for-each-ref --sort=-committerdate refs/heads/ --format="%(authordate:short) %(authorname) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))"'
+alias git-staleremote='git for-each-ref --sort=-committerdate refs/heads/ refs/remotes --format="%(authordate:short) %(authorname) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))"'
