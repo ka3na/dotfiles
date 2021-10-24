@@ -61,7 +61,7 @@ export tReset='\033[0m'
 # ------------------------------------------------------------------------------
 
 # check if we are being sourced by another script or shell
-[[ "${#BASH_SOURCE[@]}" -gt "1" ]] && { return 0; }
+[[ "${#BASH_SOURCE[@]}" -gt "0" ]] && { return 0; }
 
 echo "-----"
 echo $tBold"hello text format: BOLD"$tReset
