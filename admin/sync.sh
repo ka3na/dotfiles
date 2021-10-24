@@ -20,7 +20,7 @@ cd ~
 fileTextFormat=$DIR_ROOT/helpers/textFormat
 if [ -f "$fileTextFormat" ]; then
   source $fileTextFormat
-else 
+else
   tRed='\033[31m'
   tReset='\033[0m'
   echo $tRed"Error: file '~/$fileTextFormat' is required but does not exist, please run the install script"$tReset

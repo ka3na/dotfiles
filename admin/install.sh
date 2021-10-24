@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 # Installs the dotfiles repository.
 #
-# This acts as a reset as it will back up and replace any existing '.dotfiles' 
+# This acts as a reset as it will back up and replace any existing '.dotfiles'
 # folder that already exists in the user's home directory.
 #
 # USAGE:
@@ -57,6 +57,6 @@ fileSync=$DIR_ROOT/admin/sync.sh
 if [ -f "$fileSync" ]; then
   echo $styleConfirm"...script file found"$styleEnd
   source $fileSync
-else 
+else
   echo $styleError"Error: unable to complete the action, $fileSync does not exist"$styleEnd
 fi
