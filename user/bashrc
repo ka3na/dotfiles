@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# kill default zsh warning
+# export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # File for local unversioned requirements
 fileBashrcLocal=~/.bashrc_local
 if [ -e "$fileBashrcLocal" ]; then
