@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Define a timestamp function
+now() {
+  date +"%Y-%m-%d.%H-%M" # current time
+}
