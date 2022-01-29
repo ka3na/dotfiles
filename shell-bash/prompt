@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # default $PS1 on MacOS = \h:\W \u\$
 # default $PS2 on MacOS = >

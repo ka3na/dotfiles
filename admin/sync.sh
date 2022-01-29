@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # ------------------------------------------------------------------------------
 # Sync dotfiles from local or remote.

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Example of settings: 
 # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
