@@ -13,7 +13,7 @@ DIR_BACKUP="dotfiles-backup/$(date +'%Y.%m.%d-%H.%M.%S')"
 
 USER_FILES="bashrc bash_profile"
 
-# Make sure we are in the user home directory
+# Make sure we are in the user's home directory
 cd ~
 
 # Sourcing required files
