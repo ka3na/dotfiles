@@ -1,19 +1,16 @@
 #!/usr/bin/env bash
 
-# kill default zsh warning
-# export BASH_SILENCE_DEPRECATION_WARNING=1
-
-# File for local unversioned requirements
+# file for local unversioned requirements
 fileBashrcLocal=~/.bashrc_local
 if [ -e "$fileBashrcLocal" ]; then
   source $fileBashrcLocal
 fi
 
-# Bash config
+# bash config
 source ~/.dotfiles/shell-bash/aliases
-source ~/.dotfiles/shell-bash/paths
 source ~/.dotfiles/shell-bash/prompt
 source ~/.dotfiles/shell-bash/settings
 
-# Run commands
+# run commands
 source ~/.dotfiles/runcom/nvmrc
+source ~/.dotfiles/runcom/utilities
