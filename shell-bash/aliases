@@ -10,8 +10,7 @@ alias lsa='ls -alhFG'
 alias aliases='printf "\033[?7l" && alias && printf "\033[?7h"'
 
 # Git - https://git-scm.com/docs/git-log#_pretty_formats
-alias gl='git log --format=format:"%C(auto)%H%Creset - %cn - %Cgreen%cd%Creset - %Cgreen%cr%Creset - %s"'
-alias glt='git log --format=format:"%at - %H - %cn - %cd - %cr - %s"'
+alias gl='git log --format=format:"%Cblue%H%Creset - %Cgreen%ad%Creset - %ar - %Cred%an%Creset - %s" --date=format:"%a %d.%m.%y %H:%M:%S %z"'
 alias git-date='GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date "$(date)"'
 alias git-stalelocal='git for-each-ref --sort=-committerdate refs/heads/ --format="%(authordate:short) %(authorname) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))"'
 alias git-staleremote='git for-each-ref --sort=-committerdate refs/heads/ refs/remotes --format="%(authordate:short) %(authorname) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))"'
