@@ -1,19 +1,27 @@
 #!/bin/bash
 
 # Navigation
-alias ..='cd .. && ls'
-alias ...='cd ../..'
+alias .='cd .. && ls'
+alias ..='cd ../.. && ls'
 
 alias ls='ls -lhFG'
 alias lsa='ls -alhFG'
 
 alias aliases='printf "\033[?7l" && alias && printf "\033[?7h"'
 
-# Git - https://git-scm.com/docs/git-log#_pretty_formats
+# git log - https://git-scm.com/docs/git-log#_pretty_formats
 alias gl='git log --format=format:"%Cblue%H%Creset - %Cgreen%ad%Creset - %ar - %Cred%an%Creset - %s" --date=format:"%a %d.%m.%y %H:%M:%S %z"'
+# git branch - current branch
+alias gp='git pull --tags -f'
+# git branch - current branch
+alias gb='git rev-parse --abbrev-ref HEAD'
+# git reset - reset to same as remote
+alias gr='git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)'
+# git update last commit date to now
 alias git-date='GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date "$(date)"'
+# git show stale branches
 alias git-stalelocal='git for-each-ref --sort=-committerdate refs/heads/ --format="%(authordate:short) %(authorname) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))"'
 alias git-staleremote='git for-each-ref --sort=-committerdate refs/heads/ refs/remotes --format="%(authordate:short) %(authorname) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))"'
 
-# Find stuff
+# find stuff
 alias find-process='ps axo pid,ruid,tty,comm | '
