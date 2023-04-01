@@ -1,6 +1,36 @@
 #!/bin/bash
 
+functions() {
+  echo "killpp"
+  echo "now"
+}
+
 # Define a timestamp function
 now() {
   date +"%Y-%m-%d.%H-%M-%S" # current time
+}
+
+# custom tasks
+killpp() {
+    echo "----------";
+    lsof -i:8000
+    echo "----------";
+    local plariumPlayId="$(lsof -i:8000 | grep -i PlariumPl | awk '{print $2}')";
+    if [ -n "$plariumPlayId" ]; then
+      echo "PlariumPl process found, killing process id: $plariumPlayId"
+      kill -9 $plariumPlayId
+    else
+      echo "PlariumPl process not found"
+    fi
+    echo "----------";
+    local plariumId="$(lsof -i:8000 | grep -i Plarium | awk '{print $2}' | uniq)";
+    if [ -n "$plariumId" ]; then
+      echo "Plarium process found, killing process id: $plariumId"
+      kill -9 $plariumId
+    else
+      echo "Plarium process not found"
+    fi
+    echo "----------";
+    lsof -i:8000
+    echo "----------";
 }
